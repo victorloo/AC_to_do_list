@@ -1,5 +1,24 @@
-<%= @list.name %>
-<%= @list.due_date %>
-<%= @list.note %>
-
-<%= link_to  "Back to index", root_path %>
+<div class="container">
+  <h1>Do you remember?</h1>
+  <table class="table table-bordered">
+    <tr>
+      <th>Name</th>
+      <td>
+        <%= @list.name %>
+      </td>
+    </tr>
+    <tr>
+      <th>Due Date</th>
+      <td>
+        <%= @list.due_date %>
+      </td>
+    </tr>
+    <tr>
+      <th>Note</th>
+      <td>
+        <%= @list.note %>
+      </td>
+    </tr>
+  </table>
+  <%= link_to  "Back to index", root_path, class: "btn btn-default" %>
+</div>
