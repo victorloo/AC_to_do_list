@@ -1,5 +1,5 @@
 <div class="container">
-  <div>
+  <div class="alert">
     <% if @list.errors.present? %>
       <ul>
         <% @list.errors.each do |error, message| %>
@@ -29,8 +29,8 @@
       </div>
 
       <%= f.submit class: "btn btn-primary" %>
-        <% end %>
-          <br>
-          <%= link_to  "Back to index", root_path, class: "btn btn-default" %>
+    <% end %>
+    <br>
+    <%= link_to  "Back to index", root_path, class: "btn btn-default" %>
   </div>
 </div>

@@ -33,9 +33,14 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @list.destroy
-
-    redirect_to root_path
+    @time_left = (@list.due_date - Time.now).to_i
+    unless @time_left > 0
+      flash[:alert] = "Cannot delete the list, Because the list has expired."
+      redirect_to root_path
+    else
+      @list.destroy
+      redirect_to root_path
+    end
   end
 
   private
