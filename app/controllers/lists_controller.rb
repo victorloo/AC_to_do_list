@@ -19,6 +19,10 @@ class ListsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @list = List.find(params[:id])
+  end
+
   def update
     
   end
