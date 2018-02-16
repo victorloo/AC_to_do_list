@@ -1,31 +1,36 @@
-<% if @list.errors.present? %>
-  <ul>
-    <% @list.errors.each do |error, message| %>
-      <li>
-        <%= "#{error.capitalize}  #{message}" %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-<div class="form container">
-<%= form_for @list do |f| %>
-  <div class="form-group">
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %>
+<div class="container">
+  <div>
+    <% if @list.errors.present? %>
+      <ul>
+        <% @list.errors.each do |error, message| %>
+          <li>
+            <%= "#{error.capitalize}  #{message}" %>
+          </li>
+          <% end %>
+      </ul>
+      <% end %>
   </div>
+  <h1>Write, Write and Write!</h1>
+  <div class="form container">
+    <%= form_for @list do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "Name" %>
+          <%= f.text_field :name %>
+      </div>
 
-  <div class="form-group">
-  <%= f.label :due_date, "Due Date" %>
-  <%= f.datetime_field :due_date, min: Time.now %>
+      <div class="form-group">
+        <%= f.label :due_date, "Due Date" %>
+          <%= f.datetime_field :due_date, min: Time.now %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :note, "Note" %>
+          <%= f.text_area :note %>
+      </div>
+
+      <%= f.submit class: "btn btn-primary" %>
+        <% end %>
+          <br>
+          <%= link_to  "Back to index", root_path, class: "btn btn-default" %>
   </div>
-
-  <div class="form-group">
-  <%= f.label :note, "Note" %>
-  <%= f.text_area :note %>
-  </div>
-
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
-<br>
-<%= link_to  "Back to index", root_path, class: "btn btn-default" %>
 </div>
