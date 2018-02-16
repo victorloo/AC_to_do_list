@@ -1,1 +1,9 @@
 <h1>Lists</h1>
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <%= list.name %>
+      <%= list.due_date %>
+    </li>
+  <% end %>
+</ul>
